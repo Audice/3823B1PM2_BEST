@@ -135,30 +135,32 @@ jobs:
 
       - name: 0-Begin_Task
         shell: bash
-        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST/build
-        run: ./sum
-        
-      - name: 0-Begin_Task estimate
+        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
+        run: |
+          ./build/sum
+          python3 testscript.py -p ${{github.actor}} -t "0-Begin_Task" -r "$(echo $?)" -m 100
+
+      - name: 1-type clear
         shell: bash
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
-        run: python3 testscript.py -p ${{github.actor}} -t "0-Begin_Task" -m 100
-        
-      - name: Install Strip
-        shell: bash
-        run: cmake --install . --strip
+        run: python3 testscript.py -p ${{github.actor}} -t "1-type" -n
 
-      - name: Pack
+      - name: 1-type task1
+        if: always()
         shell: bash
-        working-directory: instdir
+        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
-          ls -laR
-          ${{ matrix.config.archiver }} ../${{ matrix.config.artifact }} .
-      - name: Upload
-        uses: actions/upload-artifact@v1
-        with:
-          path: ./${{ matrix.config.artifact }}
-          name: ${{ matrix.config.artifact }}
+          ./build/1-type/task1
+          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
 
+      - name: 1-type task2
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
+        run: |
+          ./build/1-type/task2
+          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 20
+          
       - name: Upload release asset
         if: github.event_name == 'release' && (github.event.action == 'published' || github.event.action == 'created')
         uses: actions/upload-release-asset@v1
