@@ -121,7 +121,7 @@ jobs:
 
       - name: Very hard setting
         shell: bash
-        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           pip install gdown
           gdown 1V29iodjBl-gtvZzqpvC-_Zudi031TTUA
