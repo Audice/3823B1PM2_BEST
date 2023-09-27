@@ -117,8 +117,8 @@ jobs:
             
       - name: Build
         shell: bash
-        run: cmake --build . --config ${{ matrix.config.build_type }}
-
+        run: cmake --build ./build --config ${{ matrix.config.build_type }}
+        
       - name: Very hard setting
         shell: bash
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
