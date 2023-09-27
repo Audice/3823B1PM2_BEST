@@ -142,21 +142,77 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: python3 testscript.py -p ${{github.actor}} -t "1-type" -n
 
-      - name: 1-type task1
+      - name: 1-type seconds
         if: always()
         shell: bash
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
-          ./build/1-type/task1
+          ./build/1-type/seconds
           python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
 
-      - name: 1-type task2
+      - name: 1-type clock
         if: always()
         shell: bash
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
-          ./build/1-type/task2
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 20
+          ./build/1-type/clock
+          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+
+      - name: 1-type module
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
+        run: |
+          ./build/1-type/module
+          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+
+      - name: 1-type decomposition
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
+        run: |
+          ./build/1-type/decomposition
+          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          
+      - name: 1-type point
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
+        run: |
+          ./build/1-type/point
+          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+
+      - name: 1-type char-category
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
+        run: |
+          ./build/1-type/char-category
+          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          
+      - name: 1-type double
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
+        run: |
+          ./build/1-type/double
+          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          
+      - name: 1-type byte
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
+        run: |
+          ./build/1-type/byte
+          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+
+      - name: 1-type deadline
+        if: always()
+        shell: bash
+        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
+        run: |
+          ./build/1-type/deadline
+          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
           
       - name: Upload release asset
         if: github.event_name == 'release' && (github.event.action == 'published' || github.event.action == 'created')
