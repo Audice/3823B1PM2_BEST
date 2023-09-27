@@ -130,17 +130,17 @@ jobs:
 
       - name: 0-Begin_Task clear
         shell: bash
-        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: python3 testscript.py -p ${{github.actor}} -t "0-Begin_Task" -n
 
       - name: 0-Begin_Task
         shell: bash
-        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3/build
+        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST/build
         run: ./sum
         
       - name: 0-Begin_Task estimate
         shell: bash
-        working-directory: /home/runner/work/BEST_3823B1FI3/BEST_3823B1FI3
+        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: python3 testscript.py -p ${{github.actor}} -t "0-Begin_Task" -m 100
         
       - name: Install Strip
