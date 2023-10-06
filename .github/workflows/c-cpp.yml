@@ -214,7 +214,7 @@ jobs:
           ./build/1-type/deadline
           python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
           
-            - name: 2-if_else_switch clear
+      - name: 2-if_else_switch clear
         if: always()
         shell: bash
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
