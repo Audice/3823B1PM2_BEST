@@ -207,6 +207,7 @@ jobs:
           ./build/1-type/deadline
           python3 fill_magazine.py -t "deadline" -r "$(echo $?)"
 
+
       - name: 2-if_else_switch Change
         if: always()
         shell: bash
