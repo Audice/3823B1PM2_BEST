@@ -120,27 +120,20 @@ jobs:
         shell: bash
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
+          pip install pandas
           pip install gdown
+          gdown 1s4pDdRrUlBKIKebHn4tO4n0pMfj5iDbc
+          gdown 1QwDxS1qW7K5KmZUNnjWNwDimNOoybFm8
+          gdown 17ctW6WHBEhUfRbamy_zPOCOBfMeXC-XN
           gdown 16hhW-MiiHFEKbhKzwli2twAVJjHuGNHg
-          gdown 1cK-P-nbWssRgNNfmnA9eynFoSwIotSbc
           ls
-
-      - name: 0-Begin_Task clear
-        shell: bash
-        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
-        run: python3 testscript.py -p ${{github.actor}} -t "0-Begin_Task" -n
 
       - name: 0-Begin_Task
         shell: bash
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/sum
-          python3 testscript.py -p ${{github.actor}} -t "0-Begin_Task" -r "$(echo $?)" -m 100
-
-      - name: 1-type clear
-        shell: bash
-        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
-        run: python3 testscript.py -p ${{github.actor}} -t "1-type" -n
+          python3 fill_magazine.py -t "double" -r "$(echo $?)"
 
       - name: 1-type seconds
         if: always()
@@ -148,7 +141,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/1-type/seconds
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "seconds" -r "$(echo $?)"
 
       - name: 1-type clock
         if: always()
@@ -156,7 +149,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/1-type/clock
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "clock" -r "$(echo $?)"
 
       - name: 1-type module
         if: always()
@@ -164,7 +157,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/1-type/module
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "module" -r "$(echo $?)"
 
       - name: 1-type decomposition
         if: always()
@@ -172,7 +165,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/1-type/decomposition
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "decomposition" -r "$(echo $?)"
           
       - name: 1-type point
         if: always()
@@ -180,7 +173,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/1-type/point
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "point" -r "$(echo $?)"
 
       - name: 1-type char-category
         if: always()
@@ -188,7 +181,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/1-type/char-category
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "char-category" -r "$(echo $?)"
           
       - name: 1-type double
         if: always()
@@ -196,7 +189,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/1-type/double
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "double" -r "$(echo $?)"
           
       - name: 1-type byte
         if: always()
@@ -204,7 +197,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/1-type/byte
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "byte" -r "$(echo $?)"
 
       - name: 1-type deadline
         if: always()
@@ -212,13 +205,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/1-type/deadline
-          python3 testscript.py -p ${{github.actor}} -t "1-type" -r "$(echo $?)" -m 10
-          
-            - name: 2-if_else_switch clear
-        if: always()
-        shell: bash
-        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
-        run: python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -n
+          python3 fill_magazine.py -t "deadline" -r "$(echo $?)"
 
       - name: 2-if_else_switch Change
         if: always()
@@ -226,7 +213,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/change
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "change" -r "$(echo $?)"
           
       - name: 2-if_else_switch leapyear
         if: always()
@@ -234,7 +221,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/leapyear
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "leapyear" -r "$(echo $?)"
 
       - name: 2-if_else_switch chocolate
         if: always()
@@ -242,7 +229,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/chocolate
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "chocolate" -r "$(echo $?)"
 
       - name: 2-if_else_switch icecream
         if: always()
@@ -250,7 +237,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/icecream
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "icecream" -r "$(echo $?)"
 
       - name: 2-if_else_switch QuadraticEquation
         if: always()
@@ -258,7 +245,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/QuadraticEquation
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "QuadraticEquation" -r "$(echo $?)"
 
       - name: 2-if_else_switch monthday
         if: always()
@@ -266,7 +253,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/monthday
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "monthday" -r "$(echo $?)"
 
       - name: 2-if_else_switch chess
         if: always()
@@ -274,7 +261,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/chess
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "chess" -r "$(echo $?)"
 
       - name: 2-if_else_switch twoboxes
         if: always()
@@ -282,7 +269,12 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/twoboxes
-          python3 testscript.py -p ${{github.actor}} -t "2-if_else_switch" -r "$(echo $?)" -m 10
+          python3 fill_magazine.py -t "twoboxes" -r "$(echo $?)"
+          
+      - name: Estimate
+        shell: bash
+        working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
+        run: python3 testscript.py -p ${{github.actor}}
           
       - name: Upload release asset
         if: github.event_name == 'release' && (github.event.action == 'published' || github.event.action == 'created')
