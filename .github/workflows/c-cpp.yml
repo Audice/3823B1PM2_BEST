@@ -133,7 +133,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/sum
-          python3 fill_magazine.py -t "double" -r "$(echo $?)"
+          python3 fill_magazine.py -t "0-Begin_Task" -r "$(echo $?)"
 
       - name: 1-type seconds
         if: always()
