@@ -214,7 +214,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/change
-          python3 fill_magazine.py -t "change" -r "$(echo $?)"
+          python3 fill_magazine.py -t "Change" -r "$(echo $?)"
           
       - name: 2-if_else_switch leapyear
         if: always()
@@ -222,7 +222,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/leapyear
-          python3 fill_magazine.py -t "leapyear" -r "$(echo $?)"
+          python3 fill_magazine.py -t "LeapYear" -r "$(echo $?)"
 
       - name: 2-if_else_switch chocolate
         if: always()
@@ -230,7 +230,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/chocolate
-          python3 fill_magazine.py -t "chocolate" -r "$(echo $?)"
+          python3 fill_magazine.py -t "Chocolate" -r "$(echo $?)"
 
       - name: 2-if_else_switch icecream
         if: always()
@@ -238,7 +238,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/icecream
-          python3 fill_magazine.py -t "icecream" -r "$(echo $?)"
+          python3 fill_magazine.py -t "IceCream" -r "$(echo $?)"
 
       - name: 2-if_else_switch QuadraticEquation
         if: always()
@@ -254,7 +254,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/monthday
-          python3 fill_magazine.py -t "monthday" -r "$(echo $?)"
+          python3 fill_magazine.py -t "MonthDay" -r "$(echo $?)"
 
       - name: 2-if_else_switch chess
         if: always()
@@ -262,7 +262,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/chess
-          python3 fill_magazine.py -t "chess" -r "$(echo $?)"
+          python3 fill_magazine.py -t "Chess" -r "$(echo $?)"
 
       - name: 2-if_else_switch twoboxes
         if: always()
@@ -270,7 +270,7 @@ jobs:
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
           ./build/2-if_else_switch/twoboxes
-          python3 fill_magazine.py -t "twoboxes" -r "$(echo $?)"
+          python3 fill_magazine.py -t "TwoBoxes" -r "$(echo $?)"
 
       - name: 3-loop bin_patterns
         if: always()
