@@ -277,7 +277,7 @@ jobs:
         shell: bash
         working-directory: /home/runner/work/3823B1PM2_BEST/3823B1PM2_BEST
         run: |
-          ./build/3-loop/bin_patterns
+          ./build/3-loop/find_bin_pattern
           python3 fill_magazine.py -t "bin_patterns" -r "$(echo $?)"
           
       - name: 3-loop calc_e
